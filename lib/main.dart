@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() => runApp(
       MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: MyApp(),
       ),
     );
@@ -14,13 +16,24 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  var changeNumber = 1;
+  void imageChanger() {
+    setState(() {
+      changeNumber = Random().nextInt(5) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
-        onTap: () {},
-        child: Expanded(
-          child: Image.asset('images/ball1.png'),
+        onTap: () {
+          imageChanger();
+        },
+        child: Center(
+          child: Expanded(
+            child: Image.asset('images/ball$changeNumber.png'),
+          ),
         ),
       ),
     );
