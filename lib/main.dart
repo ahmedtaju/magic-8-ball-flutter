@@ -11,7 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: GestureDetector(
+        onTap: () {},
+        child: Expanded(
+          child: Image.asset('images/ball1.png'),
+        ),
+      ),
+    );
   }
 }
-
