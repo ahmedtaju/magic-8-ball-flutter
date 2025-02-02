@@ -31,10 +31,7 @@ class _MyAppState extends State<MyApp> {
           imageChanger();
         },
         child: Center(
-          child: Expanded(
-            child: Image.asset('images/ball$changeNumber.png'),
-          ),
-        ),
+            child: Image(image: AssetImage('images/ball$changeNumber.png'))),
       ),
     );
   }
